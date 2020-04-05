@@ -44,8 +44,8 @@ class TestAllClasses(unittest.TestCase):
         self.employee.setName("My Name")
         assert self.employee.getName() == "My Name", "setName() or getName() methods not working"
         self.employee.setVehicle(self.vehicle1)
-        assert self.employee.hasAVehicle() == True, "hasAVehicle() method not working"
-        assert self.employee.hasVehicle(self.vehicle2) == False, "hasVehicle() method not working"
+        assert self.employee.hasVehicle() == True, "hasAVehicle() method not working"
+        assert self.employee.getVehicle() == self.vehicle1, "hasVehicle() method not working"
         assert self.employee.removeVehicle() == self.vehicle1, "removeVehicle() method not working"
 
     # Method tests the Vehicle Class
