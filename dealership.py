@@ -18,3 +18,10 @@ class Dealership:
     # METHODS
     def addLot(self, lot):
         self.lots.append(lot)
+
+    def removeLot(self, lot):
+        if lot in self.lots:
+            self.lots.remove(lot)
+            return True
+        else:
+            return False

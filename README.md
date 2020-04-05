@@ -56,4 +56,5 @@ capacity, and full attributes so employees can know where there is space to stor
     * Constructor
     * Getters for both attributes
     * Setter for name
-    * Add lot attribute
+    * addLot method adds lot to lots
+    * removeLot method removes lot if it exists in lots and returns true, otherwise returns false
