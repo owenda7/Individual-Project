@@ -19,11 +19,17 @@ class Employee:
         self.vehicle = vehicle
 
     # METHODS
-    def hasVehicle(self):
+    def hasAVehicle(self):
         if self.vehicle is None:
             return False
         else:
             return True
+
+    def hasVehicle(self, vehicle):
+        if self.vehicle == vehicle:
+            return True
+        else:
+            return False
 
     def removeVehicle(self):
         vehicleCopy = self.vehicle
