@@ -1,6 +1,7 @@
 class Employee:
     # CONSTRUCTOR
     def __init__(self, name):
+        self.vehicle = None
         self.name = name
 
     # GETTERS
@@ -26,5 +27,4 @@ class Employee:
 
     def removeVehicle(self):
         vehicleCopy = self.vehicle
-        self.vehicle = None
         return vehicleCopy

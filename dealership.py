@@ -17,4 +17,4 @@ class Dealership:
 
     # METHODS
     def addLot(self, lot):
-        self.lots.appent(lot)
+        self.lots.append(lot)

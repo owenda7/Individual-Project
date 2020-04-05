@@ -1,6 +1,6 @@
 class Vehicle:
     # CONSTRUCTOR
-    def __init__ (self, make, model, year, vin, color):
+    def __init__(self, make, model, year, vin, color):
         self.make = make
         self.model = model
         self.year = year
