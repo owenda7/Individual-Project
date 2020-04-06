@@ -23,14 +23,17 @@ capacity, and full attributes so employees can know where there is space to stor
     * year: int
     * vin: string
     * color: string
+    
 * Lot
     * name: string
     * vehicles: set<Vehicle>
     * numVehicles: int
     * maxCapacity: int
+    
 * Employee
     * name: string
     * vehicle: Vehicle
+    
 * Dealership
     * name: string
     * lots: set<Lot>
@@ -39,6 +42,7 @@ capacity, and full attributes so employees can know where there is space to stor
 * Vehicle
     * Constructor
     * Getters and Setters for all 5 entities
+    
 * Lot 
     * Constructor
     * Getters for all 4 entities
@@ -48,11 +52,13 @@ capacity, and full attributes so employees can know where there is space to stor
     * removeVehicle method removes vehicle from vehicles list and returns that Vehicle
     * addVehicle method takes a Vehicle object and adds it to vehicles
     * pickUpVehicle method takes a vin number and returns a vehicle 
+    
 * Employee
     * Constructor 
     * getters and setter for both entities
     * hasVehicle method returns true if employee has a Vehicle
     * removeVehicle method removes vehicle and returns copy of vehicle
+    
 * Dealership
     * Constructor
     * Getters for both attributes
