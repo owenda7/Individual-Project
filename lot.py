@@ -33,10 +33,12 @@ class Lot:
     # METHODS
     def addVehicle(self, vehicle):
         self.vehicles.append(vehicle)
+        self.numVehicles += 1
 
     def removeVehicle(self, vehicle):
         if vehicle in self.vehicles:
             self.vehicles.remove(vehicle)
+            self.numVehicles -= 1
             return True
         else:
             return False

@@ -39,3 +39,9 @@ class Vehicle:
 
     def setColor(self, color):
         self.color = color
+
+    # OVERLOAD toString
+
+    def __str__(self):
+        rtnString = self.make + " | " + self.model + " | " + str(self.year) + " | " + self.vin + " | " + self.color
+        return rtnString
