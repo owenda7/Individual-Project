@@ -83,7 +83,7 @@ def employeePortal(dealership):
             if choice == 'y':
                 employee.setVehicle(output.pickUpVehicle(search))
                 print("Where would you like to drop off:")
-                for x in range(0,len(dealership.getLots())):
+                for x in range(0, len(dealership.getLots())):
                     print("   " + str(x) + " : " + dealership.getLots()[x].getName())
                 locationIndex = int(input("Input Lot Number: "))
                 while locationIndex < 0 or locationIndex > len(dealership.getLots())-1:
