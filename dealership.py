@@ -25,3 +25,10 @@ class Dealership:
             return True
         else:
             return False
+
+    def findVehicle(self, vin):
+        for i in range(0, len(self.lots)):
+            for j in range(0, len(self.lots[i].getVehicles())):
+                if self.lots[i].getVehicles()[j].getVin() == vin:
+                    return self.lots[i]
+        return "Vehicle not found"

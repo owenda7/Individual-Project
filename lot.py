@@ -43,8 +43,21 @@ class Lot:
         else:
             return False
 
+    def pickUpVehicle(self, vin):
+        for i in range(0, len(self.vehicles)):
+            if self.vehicles[i].getVin() == vin:
+                vehicle = self.vehicles[i]
+                self.removeVehicle(self.vehicles[i])
+                return vehicle
+        return None
+
     def isVehicle(self, vehicle):
         if vehicle in self.vehicles:
             return True
         else:
             return False
+
+    # OVERLOAD toString
+    def __str__(self):
+        return self.name
+

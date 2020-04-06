@@ -14,7 +14,10 @@ def main():
     printLots(burlingtonFord)
     printNumVehiclesInLots(burlingtonFord)
 
-    
+    # Run employee portal example
+    employeePortal(burlingtonFord)
+
+
 # function takes in a dealership and prints out all vehicles on all lots
 def printLots(dealership):
     for i in range(0, len(dealership.getLots())):
@@ -22,10 +25,12 @@ def printLots(dealership):
         for j in range(0, len(dealership.getLots()[i].getVehicles())):
             print(dealership.getLots()[i].getVehicles()[j])
 
+
 # function takes in a dealership and prints the number of vehicles on each lot
 def printNumVehiclesInLots(dealership):
     for i in range(0, len(dealership.getLots())):
         print("\n" + dealership.getLots()[i].getName() + " Size: " + str(dealership.getLots()[i].getNumVehicles()))
+
 
 # function creates a dealership and populates two lots randomly
 def setupTest():
@@ -58,5 +63,35 @@ def setupTest():
     burlingtonFord = Dealership("Burlington Ford", [onsite, offsite])
 
     return burlingtonFord
+
+
+def employeePortal(dealership):
+    # Create new employee
+    name = input("\n\nEnter Name: ")
+    employee = Employee(name)
+
+    search = input("Search for vehicle location by VIN or q to quit: ")
+
+    while search != 'q':
+        output = dealership.findVehicle(search)
+        if output == "Vehicle not found":
+            print(output)
+            print("Ensure vin was typed correctly (only all caps and numbers)")
+        else:
+            print("Vehicle location: " + output.getName())
+            choice = input("Would you like to pick up this car(y/n)?")
+            if choice == 'y':
+                employee.setVehicle(output.pickUpVehicle(search))
+                print("Where would you like to drop off:")
+                for x in range(0,len(dealership.getLots())):
+                    print("   " + str(x) + " : " + dealership.getLots()[x].getName())
+                locationIndex = int(input("Input Lot Number: "))
+                while locationIndex < 0 or locationIndex > len(dealership.getLots())-1:
+                    locationIndex = int(input("Input VALID Lot Number (listed above): "))
+                dealership.getLots()[locationIndex].addVehicle(employee.removeVehicle())
+        search = input("Search for vehicle location by VIN or q to quit: ")
+
+
+# Run main
 main()
 
