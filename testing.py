@@ -5,6 +5,7 @@ from lot import *
 from employee import *
 from dealership import *
 
+
 # TestAllClasses tests
 
 
@@ -25,9 +26,10 @@ class TestAllClasses(unittest.TestCase):
         assert self.dealership.getName() == "Toyota Dealership", "setName() or getName() methods not working"
         self.dealership.addLot(self.lot2)
         assert self.dealership.getLots() == [self.lot1, self.lot2], "addLot() or getLot() methods not working"
+        assert self.dealership.findVehicle("notarealvin") == "Vehicle not found", "findVehicle() method not working"
+        assert self.dealership.findVehicle("ABCD9101WXYZ") == self.lot1, "findVehicle() method not working"
 
     # Method tests the Lot Class
-
     def testLotClass(self):
         self.lot1.setMaxCapacity(300)
         assert self.lot1.getMaxCapacity() == 300, "setMaxCapacity() or getMaxCapacity() methods not working"
@@ -38,9 +40,10 @@ class TestAllClasses(unittest.TestCase):
         assert self.lot2.getVehicles() == [self.vehicle1], "setVehicles() and getVehicles() methods not working"
         self.lot2.setName("Autoshine")
         assert self.lot2.getName() == "Autoshine", "setName() or getName() methods not working"
+        assert self.lot1.pickUpVehicle("ABCD9101WXYZ") == self.vehicle3, "pickUpVehicle() method not working"
+        assert self.lot1.pickUpVehicle("notarealvin") is None, "pickUpVehicle() method not working"
 
     # Method tests the Employee Class
-
     def testEmployeeClass(self):
         self.employee.setName("My Name")
         assert self.employee.getName() == "My Name", "setName() or getName() methods not working"
@@ -50,7 +53,6 @@ class TestAllClasses(unittest.TestCase):
         assert self.employee.removeVehicle() == self.vehicle1, "removeVehicle() method not working"
 
     # Method tests the Vehicle Class
-
     def testVehicleClass(self):
         # Change all attributes
         self.vehicle1.setMake("Toyota")
