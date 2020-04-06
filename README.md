@@ -17,6 +17,7 @@ Employees can only have one vehicle at a time. The lot entity also has a current
 capacity, and full attributes so employees can know where there is space to store vehicles. 
 
 <h3>Entities: </h3>
+
 * Vehicle
     * make: string
     * model: string
@@ -39,6 +40,7 @@ capacity, and full attributes so employees can know where there is space to stor
     * lots: set<Lot>
 
 <h3>Operations: </h3> 
+
 * Vehicle
     * Constructor
     * Getters and Setters for all 5 entities
