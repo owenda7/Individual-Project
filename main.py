@@ -67,7 +67,7 @@ def setupTest():
 
 def employeePortal(dealership):
     # Create new employee
-    name = input("\n\nEnter Name: ")
+    name = input("\nEnter Name: ")
     employee = Employee(name)
 
     search = input("Search for vehicle location by VIN or q to quit: ")
