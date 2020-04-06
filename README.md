@@ -47,6 +47,7 @@ capacity, and full attributes so employees can know where there is space to stor
     * isVehicle method returns True if vehicle is on lot or False otherwise
     * removeVehicle method removes vehicle from vehicles list and returns that Vehicle
     * addVehicle method takes a Vehicle object and adds it to vehicles
+    * pickUpVehicle method takes a vin number and returns a vehicle 
 * Employee
     * Constructor 
     * getters and setter for both entities
@@ -58,3 +59,4 @@ capacity, and full attributes so employees can know where there is space to stor
     * Setter for name
     * addLot method adds lot to lots
     * removeLot method removes lot if it exists in lots and returns true, otherwise returns false
+    * findVehicle method returns Lot location or error message 

@@ -7,6 +7,7 @@ from dealership import *
 
 # TestAllClasses tests
 
+
 class TestAllClasses(unittest.TestCase):
     def setUp(self):
         self.vehicle1 = Vehicle("Ford", "Focus", 2019, "ABCD1234WXYZ", "Blue")
