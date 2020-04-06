@@ -72,23 +72,34 @@ def employeePortal(dealership):
 
     search = input("Search for vehicle location by VIN or q to quit: ")
 
+    # Continue running until quit
     while search != 'q':
+        # Find vehicle
         output = dealership.findVehicle(search)
+        # if not found
         if output == "Vehicle not found":
             print(output)
             print("Ensure vin was typed correctly (only all caps and numbers)")
+        # if found
         else:
             print("Vehicle location: " + output.getName())
+            # Give choice for employee to pickup car
             choice = input("Would you like to pick up this car(y/n)?")
             if choice == 'y':
+                # pickup car
                 employee.setVehicle(output.pickUpVehicle(search))
+
+                # choose drop off location
                 print("Where would you like to drop off:")
                 for x in range(0, len(dealership.getLots())):
                     print("   " + str(x) + " : " + dealership.getLots()[x].getName())
                 locationIndex = int(input("Input Lot Number: "))
+                # loop till valid drop off location
                 while locationIndex < 0 or locationIndex > len(dealership.getLots())-1:
                     locationIndex = int(input("Input VALID Lot Number (listed above): "))
+                # drop off vehicle
                 dealership.getLots()[locationIndex].addVehicle(employee.removeVehicle())
+        # get new search
         search = input("Search for vehicle location by VIN or q to quit: ")
 
 
